@@ -7,18 +7,16 @@ public class mazeByFound {
     private int future;
     public mazeByFound nextMazeByFound;
 
-
-    public mazeByFound(int x, int y, int now, int future) {
+    public mazeByFound(int x, int y, int now, int endX , int endY) {
         this.x = x;
         this.y = y;
         this.now = now;
-        this.future = future;
+        this.future = Math.abs(endX - x) + Math.abs(endY - y);
     }
 
     public int getValue(){
         return now + future;
     }
-
     public int getX() {
         return x;
     }
